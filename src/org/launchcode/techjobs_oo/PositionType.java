@@ -17,7 +17,7 @@ public class PositionType {
         this.value = value;
     }
 
-    // TODO: Add a custom toString() method that returns the data stored in 'value'.
+    @Override
     public String toString() {
         return value;
     }
@@ -28,15 +28,14 @@ public class PositionType {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof PositionType)) return false;
+        if (o == null ||getClass() != o.getClass()) return false;
         PositionType that = (PositionType) o;
-        return getId() == that.getId() &&
-                getValue().equals(that.getValue());
+        return id == that.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getValue());
+        return Objects.hash(id);
     }
 
 
